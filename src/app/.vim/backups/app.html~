@@ -1,0 +1,2 @@
+<h1 style="color: red">Here is the first variable: {{testVar1}}</h1>
+<h2 style="color: purple; font-size: 48px;">Here is variable two {{testVar2}}</h2>
