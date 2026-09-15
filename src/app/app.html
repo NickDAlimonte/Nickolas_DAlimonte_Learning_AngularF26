@@ -1,2 +1,17 @@
-<h1 style="color: red">Here is the first variable: {{testVar1}}</h1>
-<h2 style="color: purple; font-size: 48px;">Here is variable two: {{testVar2}}</h2>
+<h1>My Character List</h1>
+<ul>
+  @for (characters of characterList; track characters) {
+    <li>
+      <p>Character Name: {{characters.name}} </p>
+      @if(characters.level){
+        <p>Character Level: {{characters.level}}</p>
+      }
+      @if(characters.levelCap){
+        <p>Level Cap: {{characters.levelCap}} </p>
+      }
+      <p>Character Race: {{characters.race}} </p>
+      <p>Gear: {{characters.gearQuality}}</p>
+      <p>Game: {{characters.game}}</p>
+    </li>
+  }
+</ul>
