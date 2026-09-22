@@ -4,6 +4,8 @@
 }
 
 li{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   list-style: none;
   margin: 12px;
   padding: 8px;
@@ -11,6 +13,7 @@ li{
   height: 200px;
 }
 p{
+  grid-column: 1;
   justify-self: center;
   margin: 0;
   margin-left: 32px;
@@ -20,6 +23,15 @@ p{
 p:first-of-type{
   justify-self: left;
   margin: 8px;
+}
+
+img{
+  transform: translateY(-150px);
+  display: block;
+  grid-column: 2;
+  width: 200px;
+  height: 200px;
+  background-color: black;
 }
 
 @media(width > 800px){
