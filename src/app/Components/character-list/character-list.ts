@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Character } from '../../shared/models/character';
+import { CharacterListItem } from '../character-list-item/character-list-item';
 
 @Component({
   selector: 'app-character-list',
-  imports: [],
+  imports: [CharacterListItem],
   templateUrl: './character-list.html',
   styleUrl: './character-list.scss',
 })
