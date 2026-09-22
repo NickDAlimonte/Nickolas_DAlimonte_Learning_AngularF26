@@ -11,6 +11,7 @@ import { CharacterListItem } from '../character-list-item/character-list-item';
 export class CharacterList {
   characterList: Character[] = [
     {
+      id: 1,
       name: 'Vaelysong',
       levelCap: true,
       class: 'Warrior',
@@ -21,6 +22,7 @@ export class CharacterList {
     },
 
     {
+      id: 2,
       name: 'Aelithiria',
       race: 'Alvarin',
       class: 'Dex Footie',
@@ -29,6 +31,7 @@ export class CharacterList {
     },
 
     {
+      id: 3,
       name: 'Keliza',
       race: 'Alvarin',
       class: 'Hybrid',
@@ -37,6 +40,7 @@ export class CharacterList {
     },
 
     {
+      id: 4,
       name: 'Keliza',
       race: 'Draenei',
       class: 'Paladin',
@@ -47,6 +51,7 @@ export class CharacterList {
     },
 
     {
+      id: 5,
       name: 'Aelithiria',
       race: 'Void Elf',
       class: 'Mage',
@@ -56,6 +61,7 @@ export class CharacterList {
       game: 'World of Warcraft',
     },
     {
+      id: 6,
       name: 'Kitiza',
       race: 'Void Elf',
       class: 'Priest',

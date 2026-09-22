@@ -1,3 +1,9 @@
-@for(character of characterList; track character.name){
+<h1>My Character list</h1>
+
+<ul>
+@for(character of characterList; track character.id){
   <app-character-list-item [character]="character"></app-character-list-item>
+}@empty{
+  <h1>There is nothing to display here!</h1>
 }
+</ul>
