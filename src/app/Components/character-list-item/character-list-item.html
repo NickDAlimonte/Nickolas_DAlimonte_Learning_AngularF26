@@ -2,11 +2,19 @@
   <li>
     <p>Character ID: {{character().id}}</p>
     <p>Character Name: {{character().name}}</p>
-    <p>Character Level: {{character().level}}</p>
-    <p>Level Cap: {{character().levelCap}}</p>
+    @if(character().level){
+      <p>Character Level: {{character().level}}</p>
+      <p>Level Cap: {{character().levelCap}}</p>
+      }@else{
+      <p>This game doesn't have levels</p>
+      }
     <p>Gear Quality: {{character().gearQuality}}</p>
     <p>Character Race: {{character().race}}</p>
-    <img alt="placeholder">
+    @switch (character().game){
+      @case ('World of Warcraft') {<p id="WoW">Game: {{character().game}}</p>}
+      @case ('Mortal Online II') {<p id="mortalOnline">Game: Mortal Online II</p>}
+      @default {<p>Game: {{character().game}}</p>}
+    }
   </li>
 
 </ul>

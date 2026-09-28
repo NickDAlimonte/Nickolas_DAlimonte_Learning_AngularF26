@@ -3,7 +3,19 @@
   padding: 0;
 }
 
+#mortalOnline{
+  color: black;
+  font-size: 24px;
+}
+
+#WoW{
+  color: gold;
+  font-size: 24px;
+}
+
 li{
+  background-color: grey;
+  font-size: 18px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   list-style: none;
@@ -17,7 +29,7 @@ p{
   justify-self: center;
   margin: 0;
   margin-left: 32px;
-  padding-top: 8px;
+  padding-top: 4px;
 }
 
 p:first-of-type{
@@ -25,14 +37,6 @@ p:first-of-type{
   margin: 8px;
 }
 
-img{
-  transform: translateY(-150px);
-  display: block;
-  grid-column: 2;
-  width: 200px;
-  height: 200px;
-  background-color: black;
-}
 
 @media(width > 800px){
   li{

@@ -36,7 +36,7 @@ export class CharacterList {
       race: 'Alvarin',
       class: 'Hybrid',
       gearQuality: 'Plate',
-      game: 'Mortal Online 2',
+      game: 'Mortal Online II',
     },
 
     {
