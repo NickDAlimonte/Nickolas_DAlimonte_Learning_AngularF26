@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, Input, input, output } from '@angular/core';
 import { Character } from '../../shared/models/character';
 import { ContentEvent } from '../../shared/models/content-event'
 import { createStructuredContentOutput } from '@angular/cli/src/commands/mcp/utils';
@@ -11,6 +11,10 @@ import { createStructuredContentOutput } from '@angular/cli/src/commands/mcp/uti
 })
 export class CharacterListItem {
   character = input.required<Character>();
+  first = input.required<boolean>();
+  last = input.required<boolean>();
+  listSize = input.required<number>();
+
   clicked = output<ContentEvent>();
 
   toggle(): void{

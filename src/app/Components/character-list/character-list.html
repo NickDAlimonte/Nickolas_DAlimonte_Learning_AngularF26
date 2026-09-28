@@ -2,8 +2,14 @@
 
 <ul>
 @for(character of characterList; track character.id){
+
   <app-character-list-item
     [character]="character"
+    [class.even]="$even"
+    [class.odd]="$odd"
+    [first]="$first"
+    [last]="$last"
+    [listSize]="$count"
     (clicked)="onCharacterClicked($event)"
   />
 }@empty{

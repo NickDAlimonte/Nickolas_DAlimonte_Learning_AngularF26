@@ -1,5 +1,10 @@
-<ul>
-  <li (click)="toggle()">
+
+<li (click)="toggle()">
+    @if(first()){
+    <span class="first">This is the first item.<br>The list is {{listSize()}} items long</span>
+    }@else if(last()){
+      <span class="last">This is the last item</span>
+    }
     <p>Character ID: {{character().id}}</p>
     <p>Character Name: {{character().name}}</p>
     @if(character().level){
@@ -16,5 +21,3 @@
       @default {<p>Game: {{character().game}}</p>}
     }
   </li>
-
-</ul>

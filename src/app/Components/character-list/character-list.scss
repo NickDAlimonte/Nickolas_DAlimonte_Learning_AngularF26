@@ -3,8 +3,23 @@
   padding: 0;
 }
 
+.even{
+  background-color: blue;
+}
+
+.odd{
+  background-color: orange;
+}
+
 h1{
   justify-self: center;
+  font-size: 48px;
+}
+
+h2{
+  font-size: 32px;
+  justify-self: center;
+  margin-bottom: 24px;
 }
 
 ul{
