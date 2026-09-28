@@ -2,7 +2,10 @@
 
 <ul>
 @for(character of characterList; track character.id){
-  <app-character-list-item [character]="character"></app-character-list-item>
+  <app-character-list-item
+    [character]="character"
+    (clicked)="onCharacterClicked($event)"
+  />
 }@empty{
   <h1>There is nothing to display here!</h1>
 }

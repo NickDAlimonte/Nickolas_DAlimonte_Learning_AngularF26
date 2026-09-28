@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Character } from '../../shared/models/character';
 import { CharacterListItem } from '../character-list-item/character-list-item';
+import { ContentEvent } from '../../shared/models/content-event';
 
 @Component({
   selector: 'app-character-list',
@@ -71,4 +72,7 @@ export class CharacterList {
       game: 'World of Warcraft',
     },
   ];
+  onCharacterClicked(event: ContentEvent): void{
+    console.log(event)
+  }
 }
