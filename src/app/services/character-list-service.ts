@@ -80,6 +80,5 @@ export class CharacterListService {
 
   addCharacter(c: Character){
     this.characters.update(characterList => [...characterList, c]);
-    this.maxLevelCharacters().filter(c => !c.levelCap);
   }
 }
