@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Character } from '../../shared/models/character';
 import { CharacterListItem } from '../character-list-item/character-list-item';
 import { ContentEvent } from '../../shared/models/content-event';
@@ -7,6 +7,7 @@ import { ContentEvent } from '../../shared/models/content-event';
   selector: 'app-character-list',
   imports: [CharacterListItem],
   templateUrl: './character-list.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './character-list.scss',
 })
 export class CharacterList {
@@ -72,7 +73,7 @@ export class CharacterList {
       game: 'World of Warcraft',
     },
   ];
-  onCharacterClicked(event: ContentEvent): void{
-    console.log(event)
+  onCharacterClicked(event: ContentEvent): void {
+    console.log(event);
   }
 }

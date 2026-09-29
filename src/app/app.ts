@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CharacterList } from './Components/character-list/character-list';
 
@@ -6,6 +6,7 @@ import { CharacterList } from './Components/character-list/character-list';
   selector: 'app-root',
   imports: [RouterOutlet, CharacterList],
   templateUrl: './app.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss',
 })
 export class App {
