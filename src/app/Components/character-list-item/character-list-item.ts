@@ -1,13 +1,12 @@
-import { Component, Input, input, output, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { Character } from '../../shared/models/character';
 import { ContentEvent } from '../../shared/models/content-event';
-import { createStructuredContentOutput } from '@angular/cli/src/commands/mcp/utils';
+import {CharacterListService} from '../../services/character-list-service';
 
 @Component({
   selector: 'app-character-list-item',
   imports: [],
   templateUrl: './character-list-item.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './character-list-item.scss',
 })
 export class CharacterListItem {
@@ -17,11 +16,24 @@ export class CharacterListItem {
   listSize = input.required<number>();
 
   clicked = output<ContentEvent>();
+  private characterListService = inject(CharacterListService);
+
+  newCharacter: Character = {
+    id: 15,
+    name: "testName",
+    class: "testClass",
+    race: "testRace",
+    gearQuality: "None",
+    game: "testGame"
+
+  }
 
   toggle(): void {
     this.clicked.emit({
       id: this.character().id,
-      action: 'clicked',
-    });
+      action: 'clicked', });
+
+
+    this.characterListService.addCharacter(this.newCharacter)
   }
 }

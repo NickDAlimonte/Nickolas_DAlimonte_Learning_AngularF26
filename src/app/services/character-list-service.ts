@@ -67,4 +67,8 @@ export class CharacterListService {
   ]);
 
   characterList = this.characters.asReadonly();
+
+  addCharacter(c: Character){
+    this.characters.update(characterList => [...characterList, c]);
+  }
 }
