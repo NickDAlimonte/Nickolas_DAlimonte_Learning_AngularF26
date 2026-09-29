@@ -1,7 +1,7 @@
 <h1>My Character list</h1>
 
 <ul>
-@for(character of characterList; track character.id){
+@for(character of characterList(); track character.id){
 
   <app-character-list-item
     [character]="character"
