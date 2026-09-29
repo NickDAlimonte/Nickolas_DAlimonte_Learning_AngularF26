@@ -5,8 +5,8 @@
 
 .first, .last{
   position: absolute;
-  justify-self: center;
-  font-size: 12px;
+  left: 30%;
+  font-size: 18px;
   color: purple;
   text-align: center;
 }
@@ -24,6 +24,7 @@
 }
 
 li{
+  position: relative;
   background-color: grey;
   font-size: 18px;
   display: grid;
