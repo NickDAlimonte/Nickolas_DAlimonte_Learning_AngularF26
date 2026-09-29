@@ -24,7 +24,12 @@ h2{
 
 ul{
   display: grid;
+  background-color: red;
 
+}
+
+li{
+  background-color: red;
 }
 
 @media(width > 1200px){

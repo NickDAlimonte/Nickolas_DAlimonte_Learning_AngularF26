@@ -1,5 +1,5 @@
-
 <li (click)="toggle()">
+  <div class="characterInfo">
     @if(first()){
     <span class="first">This is the first item.<br>The list is {{listSize()}} items long</span>
     }@else if(last()){
@@ -20,4 +20,28 @@
       @case ('Mortal Online II') {<p id="mortalOnline">Game: Mortal Online II</p>}
       @default {<p>Game: {{character().game}}</p>}
     }
+  </div>
+
+  <img src="/{{character().name}}{{character().game}}.jpg">
+<!--  @switch (true){-->
+<!--    @case (character().name === "Aelithiria" && character().game === "World of Warcraft"){-->
+<!--      <img src="/AelithiriaWorld of Warcraft.jpg">-->
+<!--    }-->
+<!--    @case (character().name === "Kitiza" && character().game === "World of Warcraft"){-->
+<!--      <img src="/KitizaWorld of Warcraft.jpg">-->
+<!--    }-->
+<!--    @case (character().name === "Vaelysong" && character().game === "World of Warcraft"){-->
+<!--      <img src="/VaelysongWorld of Warcraft.jpg">-->
+<!--    }-->
+<!--    @case (character().name === "Keliza" && character().game === "World of Warcraft"){-->
+<!--      <img src="/KelizaWorld of Warcraft.jpg">-->
+<!--    }-->
+<!--    @case (character().name === "Keliza" && character().game === "Mortal Online II"){-->
+<!--      <img src="/KelizaMortal Online II.jpg">-->
+<!--    }-->
+<!--    @case (character().name === "Aelithiria" && character().game === "Mortal Online II"){-->
+<!--      <img src="/AelithiriaMortal Online II.jpg">-->
+<!--    }-->
+<!--  }-->
+
   </li>
