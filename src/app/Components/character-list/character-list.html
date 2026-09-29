@@ -16,3 +16,19 @@
   <h1>There is nothing to display here!</h1>
 }
 </ul>
+
+<h1>Characters not at level cap</h1>
+<ul>
+  @for(character of maxLevelCharacters(); track character.id){
+    <app-character-list-item
+      [character]="character"
+      [class.even]="$even"
+      [class.odd]="$odd"
+      [first]="$first"
+      [last]="$last"
+      [listSize]="$count"
+      (clicked)="onCharacterClicked($event)"
+      />
+
+  }
+</ul>

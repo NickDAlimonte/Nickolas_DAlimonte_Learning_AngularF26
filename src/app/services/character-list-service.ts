@@ -1,8 +1,14 @@
-import { Service, signal } from '@angular/core';
+import { Service, signal, computed, effect } from '@angular/core';
 import { Character } from '../shared/models/character';
 
 @Service()
 export class CharacterListService {
+  constructor() {
+    effect(() => {
+      console.log("There are currently ", this.characterList().length, "Characters in the list")
+    })
+  }
+
   private characters = signal<Character[]>([
     {
       id: 1,
@@ -68,7 +74,12 @@ export class CharacterListService {
 
   characterList = this.characters.asReadonly();
 
+  maxLevelCharacters = computed(()=>
+    this.characterList().filter(c => !c.levelCap)
+  )
+
   addCharacter(c: Character){
     this.characters.update(characterList => [...characterList, c]);
+    this.maxLevelCharacters().filter(c => !c.levelCap);
   }
 }

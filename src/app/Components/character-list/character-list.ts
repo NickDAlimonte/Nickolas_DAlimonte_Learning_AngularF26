@@ -13,6 +13,7 @@ export class CharacterList {
 
   private characterService = inject(CharacterListService)
   characterList = this.characterService.characterList;
+  maxLevelCharacters = this.characterService.maxLevelCharacters;
   onCharacterClicked(event: ContentEvent): void {
     console.log(event);
   }
