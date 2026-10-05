@@ -74,7 +74,7 @@ export class CharacterListService {
 
   characterList = this.characters.asReadonly();
 
-  maxLevelCharacters = computed(()=>
+  nonMaxLevelCharacters = computed(()=>
     this.characterList().filter(c => !c.levelCap)
   )
 

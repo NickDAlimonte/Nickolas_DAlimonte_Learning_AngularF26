@@ -13,7 +13,7 @@ export class CharacterList {
 
   private characterService = inject(CharacterListService)
   characterList = this.characterService.characterList;
-  maxLevelCharacters = this.characterService.maxLevelCharacters;
+  nonMaxChars = this.characterService.nonMaxLevelCharacters;
   onCharacterClicked(event: ContentEvent): void {
     console.log(event);
     this.characterService.removeCharacter(event.id)
