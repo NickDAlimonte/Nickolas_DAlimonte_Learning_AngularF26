@@ -81,4 +81,8 @@ export class CharacterListService {
   addCharacter(c: Character){
     this.characters.update(characterList => [...characterList, c]);
   }
+
+  removeCharacter(id: number){
+    this.characters.update(characterList => characterList.filter(i => i.id !== id))
+  }
 }

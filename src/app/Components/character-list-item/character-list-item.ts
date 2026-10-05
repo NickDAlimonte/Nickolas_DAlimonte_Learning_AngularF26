@@ -16,7 +16,6 @@ export class CharacterListItem {
   listSize = input.required<number>();
 
   clicked = output<ContentEvent>();
-  private characterListService = inject(CharacterListService);
 
   newCharacter: Character = {
     id: 15,
@@ -28,12 +27,9 @@ export class CharacterListItem {
 
   }
 
-  toggle(): void {
+  cardClicked(): void {
     this.clicked.emit({
       id: this.character().id,
       action: 'clicked', });
-
-
-    this.characterListService.addCharacter(this.newCharacter)
   }
 }

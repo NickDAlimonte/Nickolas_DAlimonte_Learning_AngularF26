@@ -16,5 +16,6 @@ export class CharacterList {
   maxLevelCharacters = this.characterService.maxLevelCharacters;
   onCharacterClicked(event: ContentEvent): void {
     console.log(event);
+    this.characterService.removeCharacter(event.id)
   }
 }
