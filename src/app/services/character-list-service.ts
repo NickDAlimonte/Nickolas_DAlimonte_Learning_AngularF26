@@ -12,7 +12,7 @@ export class CharacterListService {
       }else if(this.startingListSize === this.characterList().length){
         console.log("The character list is the same as when you launched this page.")
       }else if(this.startingListSize > this.characterList().length){
-        console.log("The list has shrunk by " + (this.startingListSize - this.characterList().length) + " characters since you've launched this page. " + this.wowCharacters().length + " are characters from Warcraft")
+        console.log("The list has shrunk by " + (this.startingListSize - this.characterList().length) + " characters since you've launched this page. " + this.mortalCharacters().length + " are characters from Mortal")
       }
     })
 
@@ -86,12 +86,16 @@ export class CharacterListService {
 
   characterList = this.characters.asReadonly();
 
-  wowCharacters = computed(() =>
-    this.characterList().filter(c => c.game === "World of Warcraft")
+  mortalCharacters = computed(() =>
+    this.characterList().filter(c => c.game === "Mortal Online II")
   )
 
   nonMaxLevelCharacters = computed(()=>
     this.characterList().filter(c => !c.levelCap)
+  )
+
+  nonMaxLevelWarcraftCharacters = computed (() =>
+  this.nonMaxLevelCharacters().filter(c => c.game === "World of Warcraft")
   )
 
   addCharacter(c: Character){

@@ -17,7 +17,7 @@
 }
 </ul>
 
-<h1>{{nonMaxChars().length}} Characters not at level cap</h1>
+<h1>{{nonMaxChars().length}} Characters not at level cap. {{nonMaxWoW().length}} are from Warcraft</h1>
 <ul>
   @for(character of nonMaxChars(); track character.id){
     <app-character-list-item

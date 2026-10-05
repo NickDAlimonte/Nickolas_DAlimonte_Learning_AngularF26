@@ -14,6 +14,7 @@ export class CharacterList {
   private characterService = inject(CharacterListService)
   characterList = this.characterService.characterList;
   nonMaxChars = this.characterService.nonMaxLevelCharacters;
+  nonMaxWoW = this.characterService.nonMaxLevelWarcraftCharacters;
   onCharacterClicked(event: ContentEvent): void {
     console.log(event);
     this.characterService.removeCharacter(event.id)
