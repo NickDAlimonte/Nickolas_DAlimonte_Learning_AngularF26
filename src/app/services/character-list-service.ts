@@ -3,7 +3,19 @@ import { Character } from '../shared/models/character';
 
 @Service()
 export class CharacterListService {
+  startingListSize: number;
   constructor() {
+    this.startingListSize = this.characterList().length;
+    effect(()=> {
+      if(this.startingListSize < this.characterList().length){
+        console.log("The character list has grown by " + (this.characterList().length - this.startingListSize) + "since you have opened this page")
+      }else if(this.startingListSize === this.characterList().length){
+        console.log("The character list is the same as when you launched this page.")
+      }else if(this.startingListSize > this.characterList().length){
+        console.log("The list has shrunk by " + (this.startingListSize - this.characterList().length) + " characters since you've launched this page. " + this.wowCharacters().length + " are characters from Warcraft")
+      }
+    })
+
     effect(() => {
       console.log("There are currently ", this.characterList().length, "Characters in the list")
     })
@@ -73,6 +85,10 @@ export class CharacterListService {
   ]);
 
   characterList = this.characters.asReadonly();
+
+  wowCharacters = computed(() =>
+    this.characterList().filter(c => c.game === "World of Warcraft")
+  )
 
   nonMaxLevelCharacters = computed(()=>
     this.characterList().filter(c => !c.levelCap)
