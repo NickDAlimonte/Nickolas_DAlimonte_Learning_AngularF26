@@ -12,6 +12,7 @@ import { CharacterListService} from '../../services/character-list-service';
 export class CharacterList {
 
   private characterService = inject(CharacterListService)
+  dataSource = this.characterService.apiUrl;
   characterList = this.characterService.characterList;
   nonMaxChars = this.characterService.nonMaxLevelCharacters;
   nonMaxWoW = this.characterService.nonMaxLevelWarcraftCharacters;

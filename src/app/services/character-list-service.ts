@@ -1,5 +1,6 @@
-import { Service, signal, computed, effect } from '@angular/core';
+import { Service, signal, computed, effect, inject } from '@angular/core';
 import { Character } from '../shared/models/character';
+import { APP_CONFIG } from '../shared/config/app-config';
 
 @Service()
 export class CharacterListService {
@@ -20,6 +21,9 @@ export class CharacterListService {
       console.log("There are currently ", this.characterList().length, "Characters in the list")
     })
   }
+
+  private config = inject(APP_CONFIG);
+  apiUrl = this.config.apiBaseUrl;
 
   private characters = signal<Character[]>([
     {
